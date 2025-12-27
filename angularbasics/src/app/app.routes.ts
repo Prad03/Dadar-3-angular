@@ -3,6 +3,7 @@ import { DataBindingComponent } from './components/data-binding/data-binding.com
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DirectivesComponent } from './components/directives/directives.component';
+import { PipeComponent } from './components/pipe/pipe.component';
 
 export const routes: Routes = [
 
@@ -17,6 +18,10 @@ export const routes: Routes = [
     {
         path:'directives',
         component:DirectivesComponent
+    },
+    {
+        path:'pipes',
+        component:PipeComponent
     }
 
 ];

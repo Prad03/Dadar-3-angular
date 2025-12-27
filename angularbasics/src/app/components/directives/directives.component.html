@@ -1,7 +1,96 @@
 <h1>Directives</h1>
 <p>Directives are classes that add additional behavior to elements in your Angular applications.</p>
 <ul>
-    <li>Components</li>
-    <li>Attribute Directives.  [ngStyle,ngClass]</li>
-    <li>Structural Directives  [ngIf ,ngFor]</li>
+  <li>Components</li>
+  <li>Attribute Directives. [ngStyle,ngClass]</li>
+  <li>Structural Directives [ngIf ,ngFor,ngSwitch]</li>
 </ul>
+
+<p [ngClass]="['bg-warning','text-center','p-1']">
+  Lorem ipsum dolor sit amet.
+</p>
+
+<p [ngClass]="{'bg-warning':true,'bg-danger':true}">Lorem ipsum dolor sit amet.</p>
+
+
+<hr>
+
+<div class="card  mb-3" style="max-width: 18rem;" [ngClass]="{'bg-dark':darkTheme, 'text-white':darkTheme}">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Dark card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+  </div>
+</div>
+
+
+<button class="btn btn-primary" (click)="changeTheme()"> Change Theme</button>
+<hr>
+
+<p [ngStyle]="boxStyles()">Lorem ipsum dolor sit amet consectetur.</p>
+
+<button class="btn btn-primary" (click)="changeMargin('60px')"> 60px</button>
+<button class="btn btn-primary" (click)="changeMargin('100px')">100px</button>
+<button class="btn btn-primary" (click)="changeMargin('150px')">150px</button>
+
+<hr>
+
+<p *ngIf="loggedIn">Welcome Nisha</p>
+
+<button class="btn btn-primary m-3" (click)="changeLogin()">Change login</button>
+
+<hr>
+
+<ng-container *ngIf="loggedIn ; then t1 else t2"></ng-container>
+
+<ng-template #t1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>KBC</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>PBC</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>ABC</td>
+      </tr>
+    </tbody>
+  </table>
+
+</ng-template>
+<ng-template #t2>
+  <h1>Please login to see details about other users</h1>
+</ng-template>
+
+<hr>
+
+<p *ngFor="let x of colors">{{x}}</p>
+<hr>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let s of students;first as f" class="col bg-warning p-3 m-1">
+      <h4>{{s.id}} {{s.name}}</h4>
+      <p>Course : {{s.course}} 
+        <span class="badge bg-primary" *ngIf="f">Primary</span> </p>
+    </div>
+
+  </div>
+</div>
