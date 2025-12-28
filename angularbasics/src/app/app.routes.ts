@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DirectivesComponent } from './components/directives/directives.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { IOComponent } from './components/io/io.component';
+import { LifecycleComponent } from './components/lifecycle/lifecycle.component';
 
 export const routes: Routes = [
 
@@ -22,6 +24,14 @@ export const routes: Routes = [
     {
         path:'pipes',
         component:PipeComponent
+    },
+    {
+        path:"input-and-output",
+        component:IOComponent
+    },
+    {
+        path:"lifecycle-methods",
+        component:LifecycleComponent
     }
 
 ];

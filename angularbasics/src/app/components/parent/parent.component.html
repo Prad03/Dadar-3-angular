@@ -1,0 +1,13 @@
+<p>parent works!</p>
+<app-child [data]="username" *ngIf="isVisible"></app-child>
+
+<button class="btn btn-primary" (click)="changeVisibility()">
+    SHOW/Hide child
+</button>
+
+
+<hr>
+
+<button class="btn btn-primary" (click)="changeUsername('Anisha')">Anisha</button>
+<button class="btn btn-primary" (click)="changeUsername('Manisha')">Manisha</button>
+<button class="btn btn-primary" (click)="changeUsername('Sunita')">Sunita</button>
