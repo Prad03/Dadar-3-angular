@@ -1,0 +1,65 @@
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Enter name</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="name" #name="ngModel" ngModel required [minlength]="2" [maxlength]="30">
+
+   <div *ngIf="name.invalid && (name.touched || name.dirty)">
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="name.errors?.['required']">name is required</div> 
+       
+       <div id="emailHelp" class="form-text text-danger" *ngIf="name.errors?.['minlength']">Minimum 2 characters are required</div>
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="name.errors?.['maxlength']">Maximum 30 characters are allowed</div>
+
+    </div>
+
+
+
+</div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" ngModel required email  #email="ngModel">
+    <div *ngIf="email.invalid && (email.touched || email.dirty)">
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="email.errors?.['required']">Email is required</div> 
+       
+       <div id="emailHelp" class="form-text text-danger" *ngIf="email.errors?.['email']">enter valid email address</div>
+
+    </div>
+   
+  </div>
+
+  <div class="mb-3">
+
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" ngModel required #password="ngModel">
+    
+     <div *ngIf="password.invalid && (password.touched || password.dirty)">
+       <div id="emailHelp" class="form-text text-danger" *ngIf="password.errors?.['required']">Password is required</div>
+    </div>
+
+  </div>
+
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Age</label>
+  <input type="number" class="form-control" id="exampleFormControlInput1" ngModel name="age" #age="ngModel" required [min]="6" [max]="100">
+
+   <div *ngIf="age.invalid && (age.touched || age.dirty)">
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="age.errors?.['required']">age is required</div>
+
+       <div id="emailHelp" class="form-text text-danger" *ngIf="age.errors?.['min']">
+        Minimun age 6 is required</div>
+
+         <div id="emailHelp" class="form-text text-danger" *ngIf="age.errors?.['max']">
+       Age limit is 100</div>
+
+    </div>
+
+  </div>
+
+  <button type="submit" class="btn btn-primary" >Submit</button>
+
+</form>

@@ -1,0 +1,19 @@
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Quote</th>
+      <th scope="col">Author</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let q of quotes">
+
+      <th scope="row">{{q.id}}</th>
+      <td>{{q.quote}}</td>
+      <td>{{q.author}}</td>
+     
+    </tr>
+   
+  </tbody>
+</table>
