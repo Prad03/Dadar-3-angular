@@ -1,41 +1,73 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact:true}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/data-binding">Data Binding</a>
+          <a class="nav-link" routerLink="/data-binding" routerLinkActive="active">Data Binding</a>
         </li>
 
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/directives">Directives</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/directives" routerLinkActive="active">Directives</a>
         </li>
 
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/pipes">Pipes</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/pipes" routerLinkActive="active">Pipes</a>
         </li>
 
-          <li class="nav-item">
-          <a class="nav-link" routerLink="/input-and-output">Input and Output</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/input-and-output" routerLinkActive="active">Input and Output</a>
         </li>
 
 
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Dropdown
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/lifecycle-methods">
-              Lifecycle methods</a></li>
+            <li><a class="dropdown-item" routerLink="/lifecycle-methods" routerLinkActive="active">
+                Lifecycle methods</a></li>
+
+            <li><a class="dropdown-item" routerLink="/services" routerLinkActive="active">
+                Services</a></li>
+
+            <li><a class="dropdown-item" routerLink="/observables" routerLinkActive="active">
+                Observables</a></li>
+
+            <li><a class="dropdown-item" routerLink="/subjects" routerLinkActive="active">
+                Subject</a></li>
+            <li><a class="dropdown-item" routerLink="/form-handling-1" routerLinkActive="active">
+                Form Handling 1</a></li>
+
+            <li><a class="dropdown-item" routerLink="/form-handling-2" routerLinkActive="active">
+                Form Handling 2</a></li>
+
+            <li><a class="dropdown-item" routerLink="/customers" routerLinkActive="active">
+                Customers</a></li>
+
+            <li><a class="dropdown-item" routerLink="/customers/detail/6" routerLinkActive="active">
+                Customer Detail</a></li>
+
+            <li><a class="dropdown-item" routerLink="/customers/orders" routerLinkActive="active">
+                Customer Orders</a></li>
+
+
+
+
             <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>

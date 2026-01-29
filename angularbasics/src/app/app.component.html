@@ -1,2 +1,10 @@
 <app-navbar></app-navbar>
+<button class="btn btn-primary" (click)="toggleLogin()">
+    Login/logout
+</button>
+<p>{{isAuthenticated()?
+ "You are logged in":
+ "You are logged out"
+ }}</p>
+
 <router-outlet></router-outlet>
